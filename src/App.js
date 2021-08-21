@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <ItemListContainer saludo={"Hola Coders!"} bienvenida={"Bienvenidos a Alkimia"} />
+      <ItemListContainer />
     </div>
   );
 }

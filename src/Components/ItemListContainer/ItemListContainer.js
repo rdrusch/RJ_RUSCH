@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./ItemListContainer.scss"
+import { cargarDatos } from '../../helpers/cargarDatos';
+import { ItemList } from './ItemList';
 
-export const ItemListContainer = ({ saludo, bienvenida }) => {
+export const ItemListContainer = () => {
+
+    const [data, setData] = useState([])
+    const [loading, setLoading] = useState(false)
+
+
+    useEffect(() => {
+        setLoading(true)
+
+        cargarDatos()
+            .then(res => setData(res))
+            .catch(err => console.log(err))
+            .finally(() => {
+                setLoading(false)
+            })
+    }, [])
+
+
+
     return (
-        <section className="seccionBienvenidos">
-            <h2>{saludo}</h2>
-            <h1 className="tituloBienvenida">{bienvenida}</h1>
-        </section>
+        <>
+            {loading
+                ? <h2>Cargando...</h2>
+                : <ItemList productos={data} />
+            }
+
+
+        </>
     )
 }
