@@ -1,18 +1,18 @@
 .headerApp{
-    padding: 1rem;
+    padding: 1.5rem 10% 1rem 10%;
     display: flex;
     justify-content: space-between;
-    background-color: #000000;
-    padding-left: 10%;
-    padding-right: 10%;
+    background-color: #FBEFDF;
+    border-bottom:0.8px solid #E19487;
 
-        h2{
-            .linkLogo{
-                text-decoration: none;
-                font-weight: 900;
-                color: #b4b4b4;
-            }
-            
+        
+        .linkLogo{
+            text-decoration: none;
+            width: 12%;
+
+                .logoNav{
+                    width: 100%;
+                }
         }
         .navBar{
             ul{
@@ -23,8 +23,8 @@
                         list-style: none;
                         .linksMenu{
                             text-decoration: none;
-                            margin: 0rem 1rem 0rem 1rem;
-                            color: #b4b4b4;
+                            margin-right: 2rem;
+                            color: #E19487;
                             font-weight: bold;
                         }
                         
@@ -40,7 +40,7 @@
                                 display: flex;
                                 justify-content: center;
                                 align-content: center;
-                                background-color: #1d1d1d;
+                                background-color: #E19487;
                                 
                                     li{
                                         list-style: none;
@@ -48,7 +48,7 @@
                                             text-decoration: none;
                                             font-size: 14px;
                                             margin: 0rem 1rem 0rem 1rem;
-                                            color: #b4b4b4;
+                                            color: #31373a;
                                         }
                                         .allProductos{
                                             font-weight: bold;
@@ -61,7 +61,7 @@
             }
         }
         .iconoCarrito{
-            color: #b4b4b4;
+            color: #31373a;
             font-size: 25px;
         }
 

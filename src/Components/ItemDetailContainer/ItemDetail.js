@@ -4,7 +4,7 @@ export const ItemDetail = ({ producto, precio, categoria, imagen, peso, codigo, 
     return (
         <div className="contenedorDetalleProducto">
             <div className="contenedorImg">
-                <img src={imagen} className="fotoProducto" alt={producto} />
+                <img src={`/img/${imagen}`} className="fotoProducto" alt={producto} />
             </div>
             <div className="contenedorDatosProducto">
                 <h3 className="categoriaProducto"> {`Categoría: ${categoria}`} </h3>

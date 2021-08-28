@@ -4,6 +4,7 @@ import { NavBar } from "./Components/NavBar/NavBar";
 import { ItemListContainer } from "./Components/ItemListContainer/ItemListContainer";
 import { ItemDetailContainer } from './Components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { Footer } from "./Components/Footer/Footer"
 
 
 
@@ -42,11 +43,9 @@ function App() {
             <Redirect to="/" />
           </Route>
 
-
-
-
-
         </Switch>
+        <Footer />
+
       </BrowserRouter>
     </>
 

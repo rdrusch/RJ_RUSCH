@@ -1,0 +1,39 @@
+footer{
+    background-color: #171C1F;
+    color: #FBEFDF;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+
+
+        &__contacto{
+            width: 30%;
+            display: inline-block;
+                &__encabezado{
+                    font-size: 13px;
+                }
+        }
+        &__ubicacion{
+            width: 30%;
+                &__encabezado{
+                    font-size: 13px;
+                }
+        }
+        &__redes{
+            width: 30%;
+            display: flex;
+
+                &__encabezado{
+                    font-size: 13px;
+                }
+
+                .facebook{
+                    width: 100%;
+                
+                }
+                .instagram{
+                    width: 100%;
+                }
+        }
+
+}

@@ -15,7 +15,7 @@ export const NavBar = () => {
 
     return (
         <header className="headerApp">
-            <h2><Link to="/" className="linkLogo">Alkimia</Link></h2>
+            <Link to="/" className="linkLogo"><img src="/img/logo.png" alt="logo alkimia" className="logoNav" /></Link>
             <nav className="navBar">
                 <ul>
                     <li><Link to="/" className="linksMenu">Home</Link></li>
