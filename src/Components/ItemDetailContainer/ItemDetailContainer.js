@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import "./itemDetailContainer.scss"
 import { useParams } from "react-router-dom"
 import { cargarDatos } from "../../helpers/cargarDatos"
 import { ItemDetail } from "./ItemDetail"
+import { UIContext } from "../../context/UIContext"
+
 
 export const ItemDetailContainer = () => {
+
+
+    const { loading, setLoading } = useContext(UIContext)
 
     const { itemId } = useParams()
 
     const [item, setItem] = useState(null)
-    const [loading, setLoading] = useState(false)
+
 
 
     useEffect(() => {

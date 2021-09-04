@@ -9,34 +9,34 @@ export const Footer = () => {
 
     return (
         <footer>
-            <section class="footer__contacto">
-                <h5 class="footer__contacto__encabezado">Contacto</h5>
-                <div class="whatsappUno">
+            <section className="footer__contacto">
+                <h5 className="footer__contacto__encabezado">Contacto</h5>
+                <div className="whatsappUno">
                     <AiOutlineWhatsApp />
                     <span>1122334455</span>
                 </div>
-                <div class="whatsappDos">
+                <div className="whatsappDos">
                     <AiOutlineWhatsApp />
                     <span>1166778899</span>
                 </div>
-                <div class="mail">
+                <div className="mail">
                     <AiOutlineMail />
                     <span>somosalkimia@gmail.com</span>
                 </div>
             </section>
-            <section class="footer__ubicación">
-                <h5 class="footer__ubicación__encabezado">Ubicación</h5>
+            <section className="footer__ubicación">
+                <h5 className="footer__ubicación__encabezado">Ubicación</h5>
                 <p>Calle 123</p>
                 <p>Tigre, GBA norte</p>
                 <p>Buenos Aires, Argentina</p>
             </section>
-            <section class="footer__redes">
-                <h5 class="footer__redes__encabezado">Encontranos en...</h5>
-                <div class="facebook">
+            <section className="footer__redes">
+                <h5 className="footer__redes__encabezado">Encontranos en...</h5>
+                <div className="facebook">
                     <AiFillFacebook />
                     <span>AlkimiaStore</span>
                 </div>
-                <div class="instagram">
+                <div className="instagram">
                     <AiFillInstagram />
                     <span>@alkimiaStore</span>
                 </div>

@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "./ItemListContainer.scss"
 import { cargarDatos } from '../../helpers/cargarDatos';
 import { ItemList } from './ItemList';
 import { useParams } from 'react-router-dom';
+import { UIContext } from '../../context/UIContext';
 
 export const ItemListContainer = () => {
+
+    const { loading, setLoading } = useContext(UIContext)
 
     const { catId } = useParams();
 
 
     const [data, setData] = useState([])
-    const [loading, setLoading] = useState(false)
+
 
 
     useEffect(() => {

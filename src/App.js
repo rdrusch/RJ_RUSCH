@@ -5,48 +5,58 @@ import { ItemListContainer } from "./Components/ItemListContainer/ItemListContai
 import { ItemDetailContainer } from './Components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { Footer } from "./Components/Footer/Footer"
+import { CartProvider } from './context/CartContext';
+import { CartScreen } from './Components/CartScreen/CartScreen';
+import { UIContextProvider } from './context/UIContext';
+
 
 
 
 function App() {
 
+
+
   return (
     <>
-      <BrowserRouter>
+      <UIContextProvider>
+        <CartProvider>
 
-        <NavBar />
+          <BrowserRouter>
 
-        <Switch>
-          <Route exact path="/">
-            <ItemListContainer />
-          </Route>
-          <Route exact path="/categoria/:catId">
-            <ItemListContainer />
-          </Route>
-          <Route exact path="/detalle/:itemId">
-            <ItemDetailContainer />
-          </Route>
-          <Route exact path="/nosotros">
-            <h1>Nosotros</h1>
-            <p>Proximamente...</p>
-          </Route>
-          <Route exact path="/contacto">
-            <h1>Contacto</h1>
-            <p>Proximamente...</p>
-          </Route>
-          <Route exact path="/carrito">
-            <h1>Carrito</h1>
-            <h2>Carrito vacío</h2>
-            <p>No tienes ningún producto en tu carrito</p>
-          </Route>
-          <Route exact path="*">
-            <Redirect to="/" />
-          </Route>
+            <NavBar />
 
-        </Switch>
-        <Footer />
+            <Switch>
+              <Route exact path="/">
+                <ItemListContainer />
+              </Route>
+              <Route exact path="/categoria/:catId">
+                <ItemListContainer />
+              </Route>
+              <Route exact path="/detalle/:itemId">
+                <ItemDetailContainer />
+              </Route>
+              <Route exact path="/nosotros">
+                <h1>Nosotros</h1>
+                <p>Proximamente...</p>
+              </Route>
+              <Route exact path="/contacto">
+                <h1>Contacto</h1>
+                <p>Proximamente...</p>
+              </Route>
+              <Route exact path="/carrito">
+                <CartScreen />
+              </Route>
+              <Route exact path="*">
+                <Redirect to="/" />
+              </Route>
+            </Switch>
 
-      </BrowserRouter>
+            <Footer />
+
+          </BrowserRouter>
+
+        </CartProvider>
+      </UIContextProvider>
     </>
 
   );
