@@ -29,7 +29,7 @@ export const Counter = ({ max, cantidad, setCantidad, agregar, agregado }) => {
                         : <button className="botonProducto agregarCarrito" onClick={agregar}>Agregar al carrito</button>
                 }
 
-                <button className="botonProducto comprarProducto">Comprar</button>
+                <button className="botonProducto comprarProducto"><Link to="/">Seguir comprando</Link></button>
             </div>
         </div>
     )
