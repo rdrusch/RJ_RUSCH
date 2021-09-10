@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react"
 import "./itemDetailContainer.scss"
 import { useParams } from "react-router-dom"
-import { cargarDatos } from "../../helpers/cargarDatos"
 import { ItemDetail } from "./ItemDetail"
 import { UIContext } from "../../context/UIContext"
+import { getFirestore } from "../../Firebase/config"
 
 
 export const ItemDetailContainer = () => {
@@ -19,14 +19,19 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         setLoading(true)
-        cargarDatos()
-            .then(res => {
-                setItem(res.find(prod => prod.codigo === Number(itemId)))
+
+        const db = getFirestore()
+        const productos = db.collection('productos')
+        const item = productos.doc(itemId)
+
+        item.get()
+            .then((doc) => {
+                setItem({ ...doc.data(), codigo: doc.id })
             })
-            .finally(() => {
-                setLoading(false)
-            })
-    }, [itemId])
+            .finally(() => { setLoading(false) })
+
+
+    }, [itemId, setLoading])
 
     return (
         <div>

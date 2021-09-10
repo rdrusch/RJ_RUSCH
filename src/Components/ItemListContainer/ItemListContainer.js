@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import "./ItemListContainer.scss"
-import { cargarDatos } from '../../helpers/cargarDatos';
 import { ItemList } from './ItemList';
 import { useParams } from 'react-router-dom';
 import { UIContext } from '../../context/UIContext';
+import { getFirestore } from '../../Firebase/config';
 
 export const ItemListContainer = () => {
 
@@ -18,24 +18,31 @@ export const ItemListContainer = () => {
 
     useEffect(() => {
         setLoading(true)
+        const db = getFirestore()
+        const productos = db.collection('productos')
 
-        cargarDatos()
-            .then(res => {
+        if (catId) {
+            const filtrado = productos.where('categoria', '==', catId)
+            filtrado.get()
+                .then((response) => {
+                    const data = response.docs.map((doc) => ({ ...doc.data(), codigo: doc.id }))
+                    setData(data)
+                })
+                .finally(() => {
+                    setLoading(false)
+                })
+        } else {
+            productos.get()
+                .then((response) => {
+                    const data = response.docs.map((doc) => ({ ...doc.data(), codigo: doc.id }))
+                    setData(data)
+                })
+                .finally(() => {
+                    setLoading(false)
+                })
+        }
 
-                if (catId) {
-                    const prodFiltrados = res.filter(prod => prod.categoria === catId)
-                    setData(prodFiltrados)
-                } else {
-                    setData(res)
-                }
-
-
-            })
-            .catch(err => console.log(err))
-            .finally(() => {
-                setLoading(false)
-            })
-    }, [catId])
+    }, [catId, setLoading])
 
 
 

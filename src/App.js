@@ -8,6 +8,8 @@ import { Footer } from "./Components/Footer/Footer"
 import { CartProvider } from './context/CartContext';
 import { CartScreen } from './Components/CartScreen/CartScreen';
 import { UIContextProvider } from './context/UIContext';
+import { Nosotros } from './Components/Nosotros/Nosotros';
+import { Contacto } from './Components/Contacto/Contacto';
 
 
 
@@ -36,12 +38,10 @@ function App() {
                 <ItemDetailContainer />
               </Route>
               <Route exact path="/nosotros">
-                <h1>Nosotros</h1>
-                <p>Proximamente...</p>
+                <Nosotros />
               </Route>
               <Route exact path="/contacto">
-                <h1>Contacto</h1>
-                <p>Proximamente...</p>
+                <Contacto />
               </Route>
               <Route exact path="/carrito">
                 <CartScreen />
