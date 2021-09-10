@@ -9,8 +9,11 @@ export const IconoCarrito = () => {
 
     return (
         <div>
-            <FaShoppingCart className="iconoCarrito" />
-            <span> {cantidadCarrito()} </span>
+            <FaShoppingCart className={cantidadCarrito() !== 0 ? "iconoCarrito" : "iconoCarritoVacio"} />
+            {cantidadCarrito() !== 0
+                ? <span className="cantidadCarritoNav">{cantidadCarrito()}</span>
+                : ""}
+
         </div>
 
     )

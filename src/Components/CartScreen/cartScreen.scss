@@ -1,23 +1,66 @@
-h2{
-    margin: 2rem;
+a{
+    text-decoration: none;
 }
-
-.contenedorProdCarrito{
+.carritoVacio{
+    text-align: center;
+}
+.contenedorCarrito{
     margin: 2rem;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-        h3{
+    min-height: 500px;
+        .tituloCarrito{
+            font-size: 25px;
+            margin-bottom: 1rem;
+        }
+        .carritoVacioMsj{
             margin-top: 1rem;
             margin-bottom: 1rem;
         }
-        p{
-            margin-bottom: 1rem;
-        }
-}
 
-.vaciarCarritoBoton{
-    margin: 2rem;
-    padding: 0.75rem;
-    font-weight: bold;
-    background-color: #ffadad;
+
+
+        .contenedorProdCarrito{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: center;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+                h3{
+                    font-size: 20px;
+                }
+                p{
+                    margin-bottom: 1rem;
+                }
+                img{
+                    width: 5%;
+                    margin-right:  1rem;
+                }
+                .precioTotalProd{
+                    font-weight: bold;
+                }
+                
+        }
+        .precioTotal{
+            margin-top: 2rem;
+            font-weight: bold;
+            font-size: 15px;
+    
+        }
+        .vaciarCarritoBoton{
+            margin: 2rem;
+            padding: 0.75rem;
+            font-weight: bold;
+            background-color: #ffadad;
+        }
+        .seguirComprandoBoton{
+            margin: 2rem;
+            padding: 0.75rem;
+            font-weight: bold;
+            background-color: #999999;
+                a{
+                    color: white;
+                }
+        }
 }
