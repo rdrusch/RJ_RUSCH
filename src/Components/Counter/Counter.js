@@ -19,9 +19,9 @@ export const Counter = ({ max, cantidad, setCantidad, agregar, agregado }) => {
 
     return (
         <div>
-            <button onClick={handleRestar} className="btnMasMenos">-</button>
+            <button onClick={handleRestar} className="btnMasMenos" disabled={cantidad === 1}>-</button>
             <span>{cantidad}</span>
-            <button onClick={handleSumar} className="btnMasMenos">+</button>
+            <button onClick={handleSumar} className="btnMasMenos" disabled={cantidad == max}>+</button>
             <div className="botonesProducto">
                 {
                     agregado
