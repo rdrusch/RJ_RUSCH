@@ -9,7 +9,7 @@ export const CartScreen = () => {
 
     const { carrito, eliminarDelCarrito, vaciarCarrito, precioCarrito } = useContext(CartContext)
 
-    if (carrito == false) {
+    if (carrito.length === 0) {
         return (
             <div className="contenedorCarrito carritoVacio">
                 <h2 className="tituloCarrito">No hay productos en el carrito</h2>
