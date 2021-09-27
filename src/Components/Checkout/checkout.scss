@@ -1,0 +1,53 @@
+.contenedor{
+    min-height: 500px;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+        .tituloCheckout{
+            margin-top: 3rem;
+            font-size: 35px;
+            font-weight: 800;
+        }
+
+        p{
+            margin-top: 0.5rem;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .contenedorForm{
+            margin-top: 4rem;
+
+                form{
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    align-content: center;
+                    align-items: center;
+
+                        input{
+                            width: 30%;
+                            margin-top: 0.5rem;
+                            margin-bottom: 3rem;
+                            border-radius: 5px;
+                            height: 1.5rem;
+                        }
+                        .labelInput{
+                            font-size: 15px;
+                            font-weight: 800;
+
+                        }
+                        .btnCheckout{
+                            margin-top: 1rem;
+                            width: 20%;
+                            padding:0.5rem;
+                            border-radius: 5px;
+                            background-color: #E19487;
+                            color: #31373a;
+                            font-weight: 800;
+                            font-size: 13px;
+                        }
+                }
+        }
+}

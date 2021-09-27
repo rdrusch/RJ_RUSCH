@@ -4,6 +4,7 @@ import { CartContext } from "../../context/CartContext";
 import { generarOrden } from "../../Firebase/generarOrden";
 import { Redirect } from "react-router";
 import Swal from "sweetalert2";
+import "./checkout.scss"
 
 
 export const Checkout = () => {
@@ -27,14 +28,14 @@ export const Checkout = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if (values.nombre.length > 3 && values.email.length > 3 && values.tel.length >= 10) {
+        if (values.nombre.length > 3 && values.email.length > 3 && values.tel.length >= 8) {
             generarOrden(values, carrito, precioCarrito())
                 .then((res) => {
 
                     Swal.fire({
                         icon: 'success',
                         title: `Muchas gracias ${values.nombre}`,
-                        text: `Tu orden de compra ha sido generada, en breve nos estaremos cominicando con usted. Su código de orden es ${res}, guardelo que se lo vamos a solicitar`,
+                        html: `Tu orden de compra ha sido generada, en breve nos estaremos cominicando con usted. Su código de orden es <b>${res}</b>, guardelo que se lo vamos a solicitar`,
 
                     })
 
@@ -52,15 +53,16 @@ export const Checkout = () => {
 
 
     return (
-        <div>
-            <h2>Checkout</h2>
+        <div className="contenedor">
+            <h2 className="tituloCheckout">Checkout</h2>
+            <p>Para finalizar la compra necesitamos que completes tus datos.</p>
             {!carrito.length
                 ? <Redirect to="/" />
                 :
 
-                <div>
+                <div className="contenedorForm">
                     <form onSubmit={handleSubmit}>
-                        <label>Nombre</label>
+                        <label className="labelInput">Nombre</label>
                         <input
                             type="text"
                             name="nombre"
@@ -68,7 +70,7 @@ export const Checkout = () => {
                             onChange={handleInputChange}
                             required />
 
-                        <label>E-mail</label>
+                        <label className="labelInput">E-mail</label>
                         <input
                             type="email"
                             name="email"
@@ -76,7 +78,7 @@ export const Checkout = () => {
                             onChange={handleInputChange}
                             required />
 
-                        <label>Teléfono</label>
+                        <label className="labelInput">Teléfono</label>
                         <input
                             type="tel"
                             name="tel"
@@ -84,7 +86,7 @@ export const Checkout = () => {
                             onChange={handleInputChange}
                             required />
 
-                        <button type="submit">Enviar</button>
+                        <button className="btnCheckout" type="submit">Enviar</button>
                     </form>
 
 
