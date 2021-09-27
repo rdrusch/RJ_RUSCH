@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# React App - Alkimia
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto para curso REACT.JS de CoderHouse
 
-## Available Scripts
+Alkimia es una app web ecommerce destinada a facilitar el proceso de compra de los clientes de la empresa. La funcionalidad de la misma es muy sensilla y práctica.
 
-In the project directory, you can run:
 
-### `npm start`
+## Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Proceso de compra de principio a fin: 
+Busqueda de productos filtrados según categorías;
+Posibilidad de agregar productos al carrito (cantidad máxima según stock disponible en la base de datos); 
+Dentro de el carrito se pueden eliminar individualmente los productos o vaciar el carrito entero;
+Para finalizar la compra se dirije a un formulario de datos personales:
+- Si se cumple con las condiciones se genera una orden en la base de datos y se le avisa al comprador, a través de un alert, el código de su compra y se vacía el carrito.
+- Si no se cumplen los requisitos (ej: el número de teléfono posee menos de 8 digitos) se le avisa al cliente que hay datos inválidos.
+- En el caso de que al momento de finalizar la compra no haya stock de algún producto solicitado se le notificará a través de una alerta.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Librerías
 
-### `npm test`
+### React-icons:
+Todos los íconos incluidos en la app como por ejemplo el carrito fueron importados de la libreria React-icons.
+### Sweet Alert 2:
+ Se utilizó esta librería para las alertas generadas una vez que se intente finalizar la compra.
+### SASS:
+Para estilar cada componente de la app se utilizó SASS ya que es una dependencia que permite darle estilos de una forma mucho más prolija en cuanto a código.
+### Firebase:
+Se utilizó como base de datos ya que es una buena forma para poder tener una web app completa sin necesidad de contratar a un programador backend.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
